@@ -1,5 +1,13 @@
 module.exports = {
   networks: {
+	  1: {
+      addressUrl: 'https://etherscan.io/address/',
+      txUrl: 'https://etherscan.io/tx/',
+      metacoin: '0x4c6ec08cf3fc987c6c4beb03184d335a2dfc4042',
+      relayHub: '0x515e39f12590a94B102903363336AF9761ebF621',
+      paymaster: '0x8FE9BDC125F26bf50F969cb32c4dcF3a353EA02B',
+      forwarder: '0xa530F85085C6FE2f866E7FdB716849714a89f4CD'
+    },
     42: {
       addressUrl: 'https://dashboard.tenderly.co/contract/kovan/',
       txUrl: 'https://dashboard.tenderly.co/tx/kovan/',

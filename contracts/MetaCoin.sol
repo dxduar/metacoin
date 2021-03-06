@@ -11,8 +11,8 @@ import "@opengsn/gsn/contracts/BaseRelayRecipient.sol";
 
 contract MetaCoin is BaseRelayRecipient {
 
-    string public symbol = "META";
-    string public description = "GSN Sample MetaCoin";
+    string public symbol = "PAINT";
+    string public description = "MurALL: Paint Token";
     uint public decimals = 0;
 
     mapping(address => uint) balances;
@@ -27,7 +27,12 @@ contract MetaCoin is BaseRelayRecipient {
     function versionRecipient() external override view returns (string memory) {
         return "2.0.0";
     }
-
+    
+    function approve(address receiver, uint amount) public virtual override returns (bool) {
+        _approve(_msgSender(), receiver, amount);
+        return true;
+    }
+    
     function transfer(address receiver, uint amount) public returns (bool sufficient) {
         if (balances[_msgSender()] < amount) return false;
         balances[_msgSender()] -= amount;
@@ -35,15 +40,14 @@ contract MetaCoin is BaseRelayRecipient {
         emit Transfer(_msgSender(), receiver, amount);
         return true;
     }
-
+    
     function getBalanceInEth(address addr) public view returns (uint){
         return ConvertLib.convert(balanceOf(addr), 2);
     }
 
-    function balanceOf(address addr) public view returns (uint) {
+    function balanceOf(address addr) public view override returns (uint256) {
         return balances[addr];
     }
-
 
     mapping(address => bool) minted;
 

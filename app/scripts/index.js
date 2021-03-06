@@ -221,7 +221,7 @@ window.addEventListener('load', async () => {
       ' More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
     )
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    window.web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:9545'))
+    window.web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/f19c5e0f2fd047e9bc14b5fdd5577e5b'))
   }
   await App.start()
 })

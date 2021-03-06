@@ -28,11 +28,6 @@ contract MetaCoin is BaseRelayRecipient {
         return "2.0.0";
     }
     
-    function approve(address receiver, uint amount) public virtual override returns (bool) {
-        _approve(_msgSender(), receiver, amount);
-        return true;
-    }
-    
     function transfer(address receiver, uint amount) public returns (bool sufficient) {
         if (balances[_msgSender()] < amount) return false;
         balances[_msgSender()] -= amount;

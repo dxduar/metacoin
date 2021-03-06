@@ -21,7 +21,7 @@ if (!argv.deployed) {
     '    MyContract: "0xb2F6CE9de06DE948b98b8137668f3fCf74cEfB53"\n',
     '},\n',
     '  "1" : {\n',
-    '    MyContract : "0xCD8EE333bd78F3427EEC32851c17016bf11eE8d4"\n',
+    '    MyContract : "0x4c6ec08cf3fc987c6c4beb03184d335a2dfc4042"\n',
     '  }\n',
     '}')
   process.exit(1)

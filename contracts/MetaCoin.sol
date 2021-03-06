@@ -40,7 +40,7 @@ contract MetaCoin is BaseRelayRecipient {
         return ConvertLib.convert(balanceOf(addr), 2);
     }
 
-    function balanceOf(address addr) public view override returns (uint256) {
+    function balanceOf(address addr) public view returns (uint256) {
         return balances[addr];
     }
 
